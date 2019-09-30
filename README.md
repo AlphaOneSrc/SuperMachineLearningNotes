@@ -360,7 +360,51 @@ $r$ | -1 | -2 | -3
 
 ![学习率](https://createmomo.github.io/2018/01/23/Super-Machine-Learning-Revision-Notes/hyper_parameter_tuning_alpha_and_beta.png)
 
+# 序列模型
 
+## 循环神经网络RNN
+
+前向传播：
+
+![RNN](./pic_pool/clip_image001.png)
+
+图中红色的参数W和b是可学习变量，每一个时间步结束时，计算该步的损失Loss，最后，每一步的所有损失之和为整个序列的总损失L，
+
+下面是每一步的公式:
+
+![Backpropagation Through Time](./pic_pool/clip_image002.png)
+
+总损失为：
+
+![Total Loss](/Users/chashao/Desktop/workspace/SuperMachineLearningNotes/clip_image004.png)
+
+反向传播算法BPTT（Backpropagation Through Time）示意图：
+
+![Backpropagation Through Time](./pic_pool/clip_image005.png)
+
+## 门控循环单元Gated Recurrent Unit (GRU)
+
+### 简化版GRU（Simplified）
+
+![GRU](./pic_pool/clip_image006.png)
+
+### 原始GRU（full）
+
+![](https://createmomo.github.io/2018/01/23/Super-Machine-Learning-Revision-Notes/gru_full.png)
+
+### 长短期记忆网络LSTM
+
+![Long Short Term Memory (./pic_pool/clip_image008.png)
+
+其中，u代表更新门，f代表忘记门，o代表输出门。
+
+### 双向RNN（Bidirectional RNN）
+
+![Bidirectional RNN](./pic_pool/clip_image009.png)
+
+### 深度RNN例子
+
+![Deep RNN Example](./pic_pool/clip_image010.png)
 
 ## 词嵌入（Word embedding）
 
@@ -1246,7 +1290,7 @@ $b$. 对剩余候选框，丢弃$IOU>0.5$的候选框，然后重复$a$。
 
 
 
-#### ✅ 解决方案：
+#### 解决方案
 
 ![image-20190918225111872](./pic_pool/sml-pt-03.png)
 
@@ -1270,7 +1314,7 @@ $b$. 对剩余候选框，丢弃$IOU>0.5$的候选框，然后重复$a$。
 
 
 
-### 03 不匹配的数据分布
+### 不匹配的数据分布
 
 当我们打算构建某个领域的模型，同样的我们还是只有很少的标签数据（例如：10000行），但我们可以从另一个**类似**的任务中获得更多的数据集（比如：20万个），根据第一节的方案，我们可以这样子划分我们的数据集:
 
@@ -1294,7 +1338,7 @@ $b$. 对剩余候选框，丢弃$IOU>0.5$的候选框，然后重复$a$。
 
 2）根据错误分析结果，我们可以尝试着让训练集的样本与Train-Dev Dataset的样本尽可能相似，同样的，我们还可以从训练集中抽取部分样本用来构建 Dev/Test set。
 
-### 04 输入归一化
+### 输入归一化
 
 我们有一个训练集拥有m个样本，Xi代表第i个样本，那么输入的归一化如下：
 
@@ -1308,7 +1352,7 @@ $b$. 对剩余候选框，丢弃$IOU>0.5$的候选框，然后重复$a$。
 
 
 
-### 05 使用单一模型来评估效果
+### 使用单一模型来评估效果
 
 我们我们不仅关心模型的表现，我们还关注运行时间的话（当然还有很多其他指标），那我们可以考虑设计一个单一模型来整体评估我们的模型，比如我们可以结合预测准确率以及运行时间的指标来设计一个综合指标：
 
@@ -1320,7 +1364,7 @@ $b$. 对剩余候选框，丢弃$IOU>0.5$的候选框，然后重复$a$。
 
 也就是把我们关心的指标，作为评估模型好坏的量化指标，这样子在实际的应用中会更加的合理。
 
-### 06 误差分析
+### 误差分析
 
 #### 进行误差分析
 
