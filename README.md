@@ -376,7 +376,7 @@ $r$ | -1 | -2 | -3
 
 总损失为：
 
-![Total Loss](/Users/chashao/Desktop/workspace/SuperMachineLearningNotes/clip_image004.png)
+![Total Loss](./pic_pool/clip_image003.png)
 
 反向传播算法BPTT（Backpropagation Through Time）示意图：
 
