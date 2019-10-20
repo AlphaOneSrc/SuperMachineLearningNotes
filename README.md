@@ -1,6 +1,6 @@
 # 内容目录
 
-* [激活函数](1.Activation Functions/激活函数.md)
+* [激活函数]("1.ActivationFunctions"/激活函数.md)
 * [梯度下降](2.Gradient Descent/梯度下降.md)
   * [计算图](2.Gradient Descent/梯度下降.md/#计算图)
   * [反向传播算法](2.Gradient Descent/梯度下降.md/#反向传播算法)
